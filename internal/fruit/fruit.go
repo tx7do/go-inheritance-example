@@ -13,3 +13,13 @@ type Fruit interface {
 
 	GetType() Type
 }
+
+func NewFruit(t Type, name string) Fruit {
+	switch t {
+	case AppleType:
+		return NewApple(name)
+	case BananaType:
+		return NewBanana(name)
+	}
+	return nil
+}

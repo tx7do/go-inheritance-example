@@ -53,3 +53,32 @@ func TestBanana(t *testing.T) {
 		assert.Equal(t, banana.GetEnergy(), float32(2))
 	}
 }
+
+func TestNewFruit(t *testing.T) {
+	{
+		apple := NewFruit(AppleType, "big")
+		assert.NotNil(t, apple)
+
+		assert.Equal(t, apple.GetType(), AppleType)
+		assert.Equal(t, apple.GetName(), "big")
+
+		apple.SetName("middle")
+		assert.Equal(t, apple.GetName(), "middle")
+
+		//apple.SetEnergy(2)
+		//assert.Equal(t, apple.GetEnergy(), float32(2))
+	}
+	{
+		banana := NewFruit(BananaType, "big")
+		assert.NotNil(t, banana)
+
+		assert.Equal(t, banana.GetType(), BananaType)
+		assert.Equal(t, banana.GetName(), "big")
+
+		banana.SetName("middle")
+		assert.Equal(t, banana.GetName(), "middle")
+
+		//banana.SetEnergy(2)
+		//assert.Equal(t, banana.GetEnergy(), float32(2))
+	}
+}
